@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTestify</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    header {
+      background-color: white;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    nav {
+      background-color: #f39c12;
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    .navbar-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #fff;
+      background: none;
+      border: none;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 1rem;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #e74c3c;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    h1, h2 {
+      color: #e74c3c;
+      font-size: 20px
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .verse {
+      font-style: italic;
+    }
+
+    .highlight {
+      background-color: #f39c12;
+      padding: 0.2rem;
+      border-radius: 4px;
+    }
+
+    .bible-verse {
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 1rem;
+      background-color: #ecf0f1;
+      margin: 1rem 0;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      color: #f39c12;
+      align-content: center
+    }
+
+    .typewriter {
+      overflow: hidden;
+      border-right: 0.15em solid #fff;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: 0.15em;
+      animation:
+        typing 3.5s steps(40, end),
+        blink-caret 0.5s step-end infinite;
+    }
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink-caret {
+      from, to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: #fff;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav a {
+        display: none;
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      .navbar-toggle {
+        display: block;
+      }
+    }
+    form {
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="typewriter">YOUTESTIFY</h1>
+  </header>
+  <nav>
+    <button class="navbar-toggle" onclick="toggleNavbar()">&#9776;</button>
+    <a href="#home">Home</a>
+    <a href="#Daily Verse">Daily Verse</a>
+    <a href="#submission-form">Submit Your Story</a>
+    <a href="#Last Month Newsletter">Last Month Newsletter</a>
+  </nav>
+ 
+  <main>
+    <section id="home">
+      <h2>We believe everyone has a story worth sharing. If you're a young individual with a tale of triumph, growth, or inspiration, we invite you to contribute. Use our submission form to be part of our Inspiring Youth Stories.</h2>
+      <p>You can download youtestify newsletter for the month of <b>December</b>.</p>
+    </section>
+    <a href="/Youtestify Newsletter.pdf" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 10px 20px; text-decoration: none; color: #fff; background-color: #f39c12; border-radius: 5px; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#f39c12'" onmouseout="this.style.backgroundColor='#f39c12'">Download here</a>
+
+    <section id="Daily Verse">
+      <h2>Daily Verse</h2>
+      <div class="bible-verse">
+        <p class="verse"><span class="highlight">2 Timothy 1:7</span> For God has not given us a spirit of fear, but of power and of love and of a sound mind. (NKJV)</p>
+      </div>
+    </section>
+
+<section id="submission-form">
+  <h2>Submission Form</h2>
+<form name="submissionForm" action="https://formspree.io/f/mdorrzqo" method="POST" onsubmit="clearForm()">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="message">Message:</label>
+  <textarea id="message" name="message" rows="4" required></textarea>
+
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  function clearForm() {
+    setTimeout(function() {
+      document.forms["submissionForm"]["name"].value = "";
+      document.forms["submissionForm"]["email"].value = "";
+      document.forms["submissionForm"]["message"].value = "";
+    }, 1000); 
+  }
+</script>
+
+    <section id="Last Month Newsletter">
+      <h2>Last Month Newsletter</h2>
+      <div class="Submission">
+        <p class="Last Month Newsletter"><span class="highlight">Note</span> Currently, we dont have last month's newsletter.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 <b>youtestify</b>. All rights reserved</p>
+  </footer>
+  <script>
+    function toggleNavbar() {
+      var navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => {
+        link.style.display = link.style.display === 'block' ? 'none' : 'block';
+      });
+    }
+  </script>
+  <style>
+    /* Form styling */
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    /* Input styling */
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: orange;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: orange;
+    }
+  </style>
+</body>
+</html>
